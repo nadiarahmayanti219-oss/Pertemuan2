@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nadia's website</title>
+</head>
+
+<body>
+
+    <h1>Contact Me</h1>
+
+    <nav>
+<a href="home.html">Home</a> 
+<a href="about.html">about</a>
+<a href="project.html">project</a>
+<a href="contact.html">contact</a>
+
+    </nav>
+
+    <hr>
+
+    <h2>Informasi Kontak</h2>
+
+    <p>
+        Jika Anda ingin berdiskusi atau bekerja sama, silakan
+        menghubungi Nadia Rahmayanti melalui informasi berikut ini.
+    </p>
+
+    <p>
+        Email:
+        <a href="nadiarahmayanti219emailkamu@gmail.com">
+            nadiarahmayanti219emailkamu@gmail.com
+        </a>
+    </p>
+
+    <p>
+        Nomor Telepon: 0881023086156
+    </p>
+
+
+    <h2>Form Pesan</h2>
+
+    <form>
+
+        <table border="1" cellpadding="8">
+
+            <tr>
+                <th colspan="2">Form Data Kontak</th>
+            </tr>
+
+            <tr>
+                <td>Nadia rahmayanti</td>
+                <td>
+                    <input type="text" name="nama">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" name="email">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Nomor Telepon</td>
+                <td>
+                    <input type="tel" name="telepon">
+                </td>
+            </tr>
+
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td>
+                    <input type="radio" name="gender" value="Laki-laki">
+                    Laki-laki
+
+                    <input type="radio" name="gender" value="Perempuan">
+                    Perempuan
+                </td>
+            </tr>
+
+           <tr>
+    <td>Tanggal Lahir</td>
+    <td>
+        <input type="number" name="tanggal" placeholder="Tanggal" min="1" max="31">
+
+        <select name="bulan">
+            <option value="">Bulan</option>
+            <option value="01">Januari</option>
+            <option value="02">Februari</option>
+            <option value="03">Maret</option>
+            <option value="04">April</option>
+            <option value="05">Mei</option>
+            <option value="06">Juni</option>
+            <option value="07">Juli</option>
+            <option value="08">Agustus</option>
+            <option value="09">September</option>
+            <option value="10">Oktober</option>
+            <option value="11">November</option>
+            <option value="12">Desember</option>
+        </select>
+
+        <input type="number" name="tahun" placeholder="Tahun" min="1900" max="2026">
+    </td>
+</tr>
+
+            <tr>
+                <td>Topik Pesan</td>
+                <td>
+                    <select name="topik">
+                        <option value="diskusi">Diskusi</option>
+                        <option value="kerjasama">Kerja Sama</option>
+                        <option value="lainnya">Lainnya</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Jenis Pesan</td>
+                <td>
+                    <input type="radio" name="jenis_pesan"
+                           value="Pertanyaan">
+                    Pertanyaan
+
+                    <input type="radio" name="jenis_pesan"
+                           value="Saran">
+                    Saran
+
+                    <input type="radio" name="jenis_pesan"
+                           value="Lainnya">
+                    Lainnya
+                </td>
+            </tr>
+
+            <tr>
+                <td>Pesan</td>
+                <td>
+                    <textarea name="pesan"
+                              rows="6"
+                              cols="40"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Salinan Pesan</td>
+                <td>
+                    <input type="checkbox" name="salinan">
+                    Kirim salinan pesan ke email saya
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Kirim Pesan">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+    <p>
+        <i>
+            Catatan: website ini hanya menggunakan HTML,
+            sehingga form belum terhubung ke server atau database.
+        </i>
+    </p>
+
+    <hr>
+
+    <p>
+        <a href="home.html">Kembali ke Home</a>
+    </p>
+
+    <footer>
+        <p>&copy; 2026 nadia rahmayantu</p>
+    </footer>
+
+</body>
+</html>
