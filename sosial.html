@@ -1,0 +1,547 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Let's Connect | Nadia</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e0f7fa, #f8fdff);
+            color: #263238;
+            padding: 30px 15px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        /* Header */
+        .profile {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0277bd, #4fc3f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 42px;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(2, 119, 189, 0.2);
+        }
+
+        .profile h1 {
+            color: #0277bd;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .profile p {
+            color: #607d8b;
+            line-height: 1.6;
+            max-width: 550px;
+            margin: auto;
+        }
+
+        .status {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 7px 15px;
+            background: #ffffff;
+            border-radius: 20px;
+            color: #0277bd;
+            font-size: 13px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Social Media */
+        .section-title {
+            text-align: center;
+            color: #0277bd;
+            margin-bottom: 18px;
+            font-size: 22px;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 18px;
+            text-decoration: none;
+            color: #263238;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid #d9f3fa;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(2, 119, 189, 0.15);
+            border-color: #81d4fa;
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: #e1f5fe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 23px;
+        }
+
+        .social-info h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #0277bd;
+        }
+
+        .social-info p {
+            font-size: 13px;
+            color: #78909c;
+        }
+
+        /* Q&A */
+        .qna {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+            margin-bottom: 30px;
+        }
+
+        .qna-description {
+            text-align: center;
+            color: #78909c;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            color: #455a64;
+            font-weight: bold;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            border: 1px solid #cfd8dc;
+            border-radius: 12px;
+            padding: 13px 15px;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #29b6f6;
+            box-shadow: 0 0 0 3px rgba(41, 182, 246, 0.1);
+        }
+
+        textarea {
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            background: #0277bd;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #01579b;
+            transform: translateY(-2px);
+        }
+
+        /* Questions */
+        .questions {
+            margin-top: 35px;
+        }
+
+        .question-card {
+            background: #f8fdff;
+            border-left: 4px solid #29b6f6;
+            padding: 17px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .question-name {
+            color: #0277bd;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        .question-text {
+            color: #455a64;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        .question-date {
+            margin-top: 8px;
+            color: #90a4ae;
+            font-size: 11px;
+        }
+
+        .empty {
+            text-align: center;
+            color: #90a4ae;
+            font-size: 14px;
+            padding: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            color: #78909c;
+            font-size: 13px;
+            padding: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .qna {
+                padding: 22px;
+            }
+
+            .profile h1 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- PROFILE -->
+    <section class="profile">
+
+        <div class="avatar">
+            N
+        </div>
+
+        <h1>Hi, I'm Nadia! 👋</h1>
+
+        <p>
+            Welcome to my little corner on the internet.
+            I'm a student who loves technology, design,
+            creative ideas, and exploring new things.
+        </p>
+
+        <span class="status">
+            🎓 PSTI Student • 💻 Tech Enthusiast • 🎨 Creative
+        </span>
+
+    </section>
+
+
+    <!-- SOCIAL MEDIA -->
+    <section>
+
+        <h2 class="section-title">
+            Let's Connect
+        </h2>
+
+        <div class="social-grid">
+
+            <a href="https://instagram.com/" target="_blank" class="social-card">
+                <div class="social-icon">
+                    📷
+                </div>
+
+                <div class="social-info">
+                    <h3>Instagram</h3>
+                    <p>@yourusername</p>
+                </div>
+            </a>
+
+
+            <a href="https://tiktok.com/" target="_blank" class="social-card">
+                <div class="social-icon">
+                    🎵
+                </div>
+
+                <div class="social-info">
+                    <h3>TikTok</h3>
+                    <p>@yourusername</p>
+                </div>
+            </a>
+
+
+            <a href="https://github.com/" target="_blank" class="social-card">
+                <div class="social-icon">
+                    💻
+                </div>
+
+                <div class="social-info">
+                    <h3>GitHub</h3>
+                    <p>My projects & code</p>
+                </div>
+            </a>
+
+
+            <a href="https://linkedin.com/" target="_blank" class="social-card">
+                <div class="social-icon">
+                    💼
+                </div>
+
+                <div class="social-info">
+                    <h3>LinkedIn</h3>
+                    <p>Let's connect professionally</p>
+                </div>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Q&A -->
+    <section class="qna">
+
+        <h2 class="section-title">
+            💬 Ask Me Anything
+        </h2>
+
+        <p class="qna-description">
+            Punya pertanyaan? Tulis apa saja yang ingin kamu tanyakan.
+        </p>
+
+
+        <form id="questionForm">
+
+            <div class="form-group">
+
+                <label for="name">
+                    Nama
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Masukkan nama kamu"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="question">
+                    Pertanyaan
+                </label>
+
+                <textarea
+                    id="question"
+                    placeholder="Tulis pertanyaan kamu di sini..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <button type="submit" class="submit-btn">
+                Kirim Pertanyaan ✨
+            </button>
+
+        </form>
+
+
+        <!-- QUESTION LIST -->
+        <div class="questions">
+
+            <h2 class="section-title">
+                Pertanyaan Pengunjung
+            </h2>
+
+            <div id="questionList">
+                <div class="empty">
+                    Belum ada pertanyaan. Jadilah yang pertama! 😊
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        © 2026 Nadia Rahmayanti. Made with 💙
+    </footer>
+
+</div>
+
+
+<script>
+
+    const form = document.getElementById("questionForm");
+    const questionList = document.getElementById("questionList");
+
+    // Mengambil data dari localStorage
+    let questions = JSON.parse(localStorage.getItem("nadiaQuestions")) || [];
+
+
+    // Menampilkan pertanyaan
+    function displayQuestions() {
+
+        questionList.innerHTML = "";
+
+        if (questions.length === 0) {
+
+            questionList.innerHTML = `
+                <div class="empty">
+                    Belum ada pertanyaan. Jadilah yang pertama! 😊
+                </div>
+            `;
+
+            return;
+        }
+
+
+        questions.forEach(function(item) {
+
+            const card = document.createElement("div");
+
+            card.className = "question-card";
+
+            card.innerHTML = `
+                <div class="question-name">
+                    👤 ${escapeHTML(item.name)}
+                </div>
+
+                <div class="question-text">
+                    ${escapeHTML(item.question)}
+                </div>
+
+                <div class="question-date">
+                    ${item.date}
+                </div>
+            `;
+
+            questionList.appendChild(card);
+
+        });
+
+    }
+
+
+    // Submit pertanyaan
+    form.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const name = document.getElementById("name").value.trim();
+
+        const question = document.getElementById("question").value.trim();
+
+
+        if (!name || !question) {
+            return;
+        }
+
+
+        const newQuestion = {
+
+            name: name,
+
+            question: question,
+
+            date: new Date().toLocaleString("id-ID")
+
+        };
+
+
+        questions.unshift(newQuestion);
+
+
+        // Menyimpan ke browser
+        localStorage.setItem(
+            "nadiaQuestions",
+            JSON.stringify(questions)
+        );
+
+
+        // Mengosongkan form
+        form.reset();
+
+
+        // Menampilkan data terbaru
+        displayQuestions();
+
+    });
+
+
+    // Mencegah HTML injection
+    function escapeHTML(text) {
+
+        const div = document.createElement("div");
+
+        div.textContent = text;
+
+        return div.innerHTML;
+
+    }
+
+
+    // Jalankan saat halaman dibuka
+    displayQuestions();
+
+</script>
+
+</body>
+</html>
+```
